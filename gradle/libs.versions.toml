@@ -1,0 +1,50 @@
+[versions]
+kotlin = "2.4.10"
+kotlinx-coroutines = "1.11.0"
+spring-boot = "4.1.1"
+spring-ai = "2.0.1"
+# SKaiNET engine + SKaiNET-transformers. The adapter depends ONLY on the
+# framework-neutral `skainet-transformers-api` SPI; the starter pulls the
+# runtime. Neither SKaiNET repo depends on Spring — this repo is the seam.
+skainet = "0.57.0"
+skainet-transformers = "0.57.1"
+
+[libraries]
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+kotlin-test-junit5 = { module = "org.jetbrains.kotlin:kotlin-test-junit5", version.ref = "kotlin" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-reactor = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-reactor", version.ref = "kotlinx-coroutines" }
+
+spring-boot-bom = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "spring-boot" }
+spring-boot-autoconfigure = { module = "org.springframework.boot:spring-boot-autoconfigure" }
+spring-boot-starter = { module = "org.springframework.boot:spring-boot-starter" }
+spring-boot-starter-webmvc = { module = "org.springframework.boot:spring-boot-starter-webmvc" }
+spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test" }
+spring-boot-configuration-processor = { module = "org.springframework.boot:spring-boot-configuration-processor" }
+
+spring-ai-bom = { module = "org.springframework.ai:spring-ai-bom", version.ref = "spring-ai" }
+spring-ai-model = { module = "org.springframework.ai:spring-ai-model" }
+spring-ai-client-chat = { module = "org.springframework.ai:spring-ai-client-chat" }
+
+skainet-bom = { module = "sk.ainet:skainet-bom", version.ref = "skainet" }
+skainet-lang-core = { module = "sk.ainet.core:skainet-lang-core" }
+skainet-backend-api = { module = "sk.ainet.core:skainet-backend-api" }
+skainet-backend-cpu = { module = "sk.ainet.core:skainet-backend-cpu" }
+skainet-backend-native-cpu = { module = "sk.ainet.core:skainet-backend-native-cpu" }
+skainet-io-core = { module = "sk.ainet.core:skainet-io-core" }
+skainet-io-gguf = { module = "sk.ainet.core:skainet-io-gguf" }
+
+skainet-tx-bom = { module = "sk.ainet.transformers:skainet-transformers-bom", version.ref = "skainet-transformers" }
+# Framework-neutral SPI: ChatModel / StreamingChatModel / EmbeddingModel / ToolDefinition.
+skainet-tx-api = { module = "sk.ainet.transformers:skainet-transformers-api" }
+# SkaiNetChatModel / SkaiNetEmbeddingModel / BertEmbeddingModel over the runtime.
+skainet-tx-providers = { module = "sk.ainet.transformers:skainet-transformers-providers" }
+skainet-tx-core = { module = "sk.ainet.transformers:skainet-transformers-core" }
+skainet-tx-agent = { module = "sk.ainet.transformers:skainet-transformers-agent" }
+skainet-tx-inference-llama = { module = "sk.ainet.transformers:skainet-transformers-inference-llama" }
+skainet-tx-inference-qwen = { module = "sk.ainet.transformers:skainet-transformers-inference-qwen" }
+
+[plugins]
+kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlinSpring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
+springBoot = { id = "org.springframework.boot", version.ref = "spring-boot" }

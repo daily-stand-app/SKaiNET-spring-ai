@@ -1,0 +1,12 @@
+spring:
+  ai:
+    skainet:
+      chat:
+        # Any Llama 3.x or Qwen 2.5/3 GGUF, e.g. Qwen3-0.6B-Q8_0.gguf or Llama-3.2-1B-Instruct-Q8_0.gguf
+        model-path: ${SKAINET_MODEL_PATH:${user.home}/.cache/standapp/models/Llama-3.2-1B-Instruct-Q8_0.gguf}
+        chat-template: auto
+        options:
+          temperature: 0.2
+          max-tokens: 256
+server:
+  port: 8080
