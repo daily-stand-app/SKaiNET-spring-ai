@@ -75,6 +75,7 @@ curl -N 'localhost:8080/chat/stream?q=hello'
 - [x] `spring-ai-skainet`: call, stream, options, usage, tool-calling loop — unit-tested against a scripted neutral model
 - [x] `spring-ai-starter-model-skainet`: auto-configuration, properties, fail-fast on a missing model, one-call GGUF loader
 - [x] Real-GGUF smoke test (`SKAINET_TEST_GGUF`): Llama-3.2-1B-Instruct Q8_0 loads in ~2 s and answers through `ChatModel.call` (local run, 2026-10-09)
+- [x] Sample app verified locally (2026-10-09, Llama-3.2-1B Q8_0, i7-9750H): Boot starts in 5.8 s with the model loaded, `POST /chat` answers a one-sentence question in 5.8 s, `GET /chat/stream` emits one SSE event per token
 - [ ] CI on a real GGUF (needs a cached model on the runner)
 - [ ] `EmbeddingModel` sample + cosine-similarity test
 - [ ] Move `SkaiNetModelFactory.chatModel()` upstream into `llm-providers` (`ModelLoader.fromGguf`), the blocker named in the adapter spec

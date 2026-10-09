@@ -25,6 +25,8 @@ spring-boot-configuration-processor = { module = "org.springframework.boot:sprin
 spring-ai-bom = { module = "org.springframework.ai:spring-ai-bom", version.ref = "spring-ai" }
 spring-ai-model = { module = "org.springframework.ai:spring-ai-model" }
 spring-ai-client-chat = { module = "org.springframework.ai:spring-ai-client-chat" }
+# Provides the ChatClient.Builder bean, like every spring-ai-starter-model-* does transitively.
+spring-ai-autoconfigure-chat-client = { module = "org.springframework.ai:spring-ai-autoconfigure-model-chat-client" }
 
 skainet-bom = { module = "sk.ainet:skainet-bom", version.ref = "skainet" }
 skainet-lang-core = { module = "sk.ainet.core:skainet-lang-core" }

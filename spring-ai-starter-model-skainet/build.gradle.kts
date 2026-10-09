@@ -21,6 +21,8 @@ dependencies {
 
     api(project(":spring-ai-skainet"))
     api(libs.spring.boot.autoconfigure)
+    api(libs.spring.ai.client.chat)
+    api(libs.spring.ai.autoconfigure.chat.client)
     annotationProcessor(libs.spring.boot.configuration.processor)
 
     // SKaiNET runtime: engine + GGUF loading + Llama/Qwen networks + chat templates.
